@@ -36,7 +36,7 @@ double twoabs(int a, int b) {
     return 1/exp2(valuation(a) - valuation(b));
 }
 
-int main() {
+int main(void) {
     int a, b;
     char c;
 
