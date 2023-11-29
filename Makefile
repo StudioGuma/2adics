@@ -1,16 +1,11 @@
 CC     = gcc
 C_FILE = $(wildcard *.c)
 TARGET = $(patsubst %.c,%,$(C_FILE))
-CFLAGS = -O3 -Wall -Werror -pedantic-errors
-OS     = windows
-
-ifeq ($(OS), windows)
-	RM = del
-else
-	RM = rm -f
-endif
+CFLAGS = -Os -Wall -Werror -pedantic-errors
 
 all:
 	$(CC) $(CFLAGS) $(C_FILE) -o $(TARGET)
+
 clean:
-	$(RM) $(TARGET) $(TARGET).exe
+#	rm -f $(TARGET)
+	del $(TARGET).exe
