@@ -3,13 +3,13 @@
 #include <stdlib.h>
 #include <inttypes.h>
 
-uint32_t gcd(int32_t a, int32_t b) {
+uint32_t gcd(uint32_t a, uint32_t b) {
     while (b != 0) {
-        int32_t r = a % b;
+        uint32_t r = a % b;
         a = b;
         b = r;
     }
-    return abs(a);
+    return a;
 }
 
 int32_t twoadic(const int32_t A, const int32_t B) {
@@ -56,7 +56,7 @@ int main(int argc, char** argv) {
             a *= -1;
             b *= -1;
         }
-        uint32_t d = gcd(a, b);
+        int32_t d = gcd(abs(a), abs(b));
         a /= d;
         b /= d; // Reduce a/b to canonical form
 
