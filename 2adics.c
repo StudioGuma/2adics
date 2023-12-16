@@ -12,30 +12,30 @@ int32_t gcd(int32_t a, int32_t b) {
     return abs(a);
 }
 
-int32_t twoadic(int32_t a, int32_t b) {
+int32_t twoadic(const int32_t A, const int32_t B) {
     int64_t x = 4611686018427387903; // Last 32 bits are 1’s
-    while (x % b != 0 && x > 4294967295) {
+    while (x % B != 0 && x > 4294967295) {
         x++;
         x >>= 1;
         x--;
     }
-    long long y = -x/b;
-    return (int32_t) y*a;
+    long long y = -x/B;
+    return (int32_t) y*A;
 }
 
 void printbin(int32_t a) {
     for (int8_t i = 31; i >= 0; i--) putchar(((a >> i) & 1) + 48); // 0 is ASCII character 48
 }
 
-int32_t valuation(int32_t a) { // Exponent of the highest power of 2 that divides a
+int32_t valuation(const int32_t A) { // Exponent of the highest power of 2 that divides a
     int32_t val = 0;
-    while (fmod(a, exp2(val + 1)) == 0) val++;
+    while (fmod(A, exp2(val + 1)) == 0) val++;
     return val;
 }
 
-double twoabs(int32_t a, int32_t b) {
-    if (a == 0) return 0;
-    return 1/exp2(valuation(a) - valuation(b));
+double twoabs(const int32_t A, const int32_t B) {
+    if (A == 0) return 0;
+    return 1/exp2(valuation(A) - valuation(B));
 }
 
 int main(int argc, char** argv) {
@@ -44,8 +44,8 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    int32_t a = atoi(argv[1]);
-    int32_t b = atoi(argv[2]);
+    int32_t a = atol(argv[1]);
+    int32_t b = atol(argv[2]);
 
     if (b == 0) {
         fprintf(stderr, "Can't divide by 0\n");
