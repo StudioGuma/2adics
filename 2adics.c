@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <inttypes.h>
 
-int32_t gcd(int32_t a, int32_t b) {
+uint32_t gcd(int32_t a, int32_t b) {
     while (b != 0) {
         int32_t r = a % b;
         a = b;
@@ -56,11 +56,11 @@ int main(int argc, char** argv) {
             a *= -1;
             b *= -1;
         }
-        int32_t d = gcd(a, b);
+        uint32_t d = gcd(a, b);
         a /= d;
         b /= d; // Reduce a/b to canonical form
 
-        if (b % 2 == 0) printf("%" PRId32 "/%" PRId32 " doesn't have a 2-adic representation", a, b);
+        if (!(b & 1)) printf("%" PRId32 "/%" PRId32 " doesn't have a 2-adic representation", a, b); // If b is divisible by 2
         else {
             if (b == 1) printf("2-adic representation of %" PRId32 ": ...", a);
             else printf("2-adic representation of %" PRId32 "/%" PRId32 ": ...", a, b);
