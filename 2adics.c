@@ -13,7 +13,7 @@ uint32_t gcd(uint32_t a, uint32_t b) {
 }
 
 int32_t twoadic(const int32_t A, const int32_t B) {
-    static int64_t x = 4611686018427387903; // Last 32 bits are 1’s
+    int64_t x = 4611686018427387903; // Last 32 bits are 1’s
     while (x % B != 0 && x > 4294967295) {
         x++;
         x >>= 1;
