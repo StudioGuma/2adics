@@ -23,12 +23,8 @@ int32_t twoadic(const int32_t A, const int32_t B) {
     return (int32_t) y*A;
 }
 
-void printbin(int32_t a) {
-    for (int8_t i = 31; i >= 0; i--) putchar(((a >> i) & 1) + 48); // 0 is ASCII character 48
-}
-
 int32_t valuation(const int32_t A) { // Exponent of the highest power of 2 that divides a
-    static int32_t val = 0;
+    uint32_t val = 0;
     while (fmod(A, exp2(val + 1)) == 0) val++;
     return val;
 }
@@ -64,7 +60,8 @@ int main(int argc, char** argv) {
         else {
             if (b == 1) printf("2-adic representation of %" PRId32 ": ...", a);
             else printf("2-adic representation of %" PRId32 "/%" PRId32 ": ...", a, b);
-            printbin(twoadic(a, b));
+            int32_t adic = twoadic(a, b);
+            for (int8_t i = 31; i >= 0; i--) putchar(((adic >> i) & 1) + 48); // 0 is ASCII character 48
         }
         
         if (b == 1) printf("\n2-adic absolute value of %" PRId32 " (in decimal): %g\n", a, twoabs(a, b));
