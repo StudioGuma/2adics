@@ -60,8 +60,8 @@ int main(int argc, char** argv) {
         else {
             if (b == 1) printf("2-adic representation of %" PRId32 ": ...", a);
             else printf("2-adic representation of %" PRId32 "/%" PRId32 ": ...", a, b);
-            int32_t adic = twoadic(a, b);
-            for (int8_t i = 31; i >= 0; i--) putchar(((adic >> i) & 1) + 48); // 0 is ASCII character 48
+            const int32_t ADIC = twoadic(a, b);
+            for (int8_t i = 31; i >= 0; i--) putchar(((ADIC >> i) & 1) + 48); // 0 is ASCII character 48
         }
         
         if (b == 1) printf("\n2-adic absolute value of %" PRId32 " (in decimal): %g\n", a, twoabs(a, b));
