@@ -7,5 +7,5 @@ all:
 	$(CC) $(CFLAGS) $(C_FILE) -o $(TARGET)
 
 clean:
-#	rm -f $(TARGET)
-	del $(TARGET).exe
+	rm -f $(TARGET)
+#	del $(TARGET).exe
