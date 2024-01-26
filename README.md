@@ -4,6 +4,6 @@ Command line program written in C that calculates and prints the last 32 digits 
 
 Works for any a and b between -2147483648 and 2147483647 inclusive (except where b = 0), but a/b will be reduced to canonical form (a and b are coprime; b > 0). Every a/b has a 2-adic expansion so long as b isn’t divisible by 2, tested to be accurate for smaller denominators. For integers (i.e. for b = 1), it’s conveniently the same as two’s complement.
 
-Building requires installing a compiler, preferably GCC, and Make on Windows. To build, open a command line and type `make`. You can then execute by typing `./2adics <n>` (on Unix-like systems) or `2adics <n>` (on Windows), where `<a>` and `<b>` are the numerator and denominator inputs, and clean by typing `make clean` after editing the makefile based on your OS.
+Building requires installing a compiler, preferably GCC, and Make on Windows. To build, open a command line and type `make`. You can then execute by typing `./2adics <a> <b>` (on Unix-like systems) or `2adics <a> <b>` (on Windows), where `<a>` and `<b>` are the numerator and denominator inputs, and clean by typing `make clean` after editing the makefile based on your OS.
 
 Executable size: 248 KB
