@@ -34,18 +34,18 @@ double twoabs(const int32_t A, const int32_t B) {
     return 1/exp2(valuation(A) - valuation(B));
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
     if (argc != 3) {
         fprintf(stderr, "Usage: 2adics <a> <b>\n");
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     int32_t a = atol(argv[1]);
     int32_t b = atol(argv[2]);
 
     if (b == 0) {
-        fprintf(stderr, "Can't divide by 0\n");
-        return 1;
+        fprintf(stderr, "Error: Can't divide by 0\n");
+        exit(EXIT_FAILURE);
     }
     else {
         if (b < 0) {
@@ -68,5 +68,5 @@ int main(int argc, char** argv) {
         else printf("\n2-adic absolute value of %" PRId32 "/%" PRId32 " (in decimal): %g\n", a, b, twoabs(a, b));
     }
 
-    return 0;
+    exit(EXIT_SUCCESS);
 }
