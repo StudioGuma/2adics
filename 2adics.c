@@ -40,7 +40,7 @@ double twoabs(const int32_t A, const int32_t B)
 	return 1/exp2(valuation(A) - valuation(B));
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	if (argc != 3) {
 		fprintf(stderr, "Usage: 2adics <a> <b>\n");
