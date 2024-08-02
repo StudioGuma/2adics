@@ -1,5 +1,5 @@
 /*
-2adics: calculates and prints the 2-adic representation of a rational number
+2adics — calculates and prints the 2-adic representation of a rational number
 Copyright (C) 2024 StudioGuma
 
 This program is free software: you can redistribute it and/or modify
