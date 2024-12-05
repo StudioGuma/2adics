@@ -20,6 +20,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 #include <math.h>
 #include <stdlib.h>
 #include <inttypes.h>
+#include <string.h>
 
 #define UINT_HALF uint32_t // uint16_t
 #define INT_TYPE int64_t // int32_t
@@ -71,6 +72,15 @@ int main(int argc, char *argv[])
 	if (argc != 3) {
 		fprintf(stderr, "Usage: 2adics <a> <b>\n");
 		exit(EXIT_FAILURE);
+	}
+
+	for (uint8_t i = 1; i <= 2; i++) {
+		for (uint8_t j = 0; j < strlen(argv[i]); j++) {
+			if (!('0' <= argv[i][j] && argv[i][j] <= '9')) {
+				fprintf(stderr, "Error: input is not a number\n");
+				exit(EXIT_FAILURE);
+			}
+		}
 	}
 
 	INT_HALF a = atol(argv[1]);
