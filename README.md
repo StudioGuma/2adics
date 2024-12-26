@@ -9,5 +9,3 @@ Works for any a and b between -2147483648 and 2147483647 inclusive (except where
 Building requires a compiler, preferably GCC, and Make. Make sure to edit the makefile according to your compiler and OS. To build, open a command line and type `make`. You can then execute by typing `./2adics <a> <b>` (on Unix-like systems) or `2adics <a> <b>` (on Windows), where `<a>` and `<b>` are the numerator and denominator inputs, and clean by typing `make clean`.
 
 Built for 64-bit systems by default, but you can edit the macros to change it to 32-bit.
-
-Linux executable size: 16 KiB
